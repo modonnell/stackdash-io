@@ -1,0 +1,23 @@
+{
+  "name": "stackdash",
+  "version": "0.1.0",
+  "description": "This is an event aggregator that can take log lines from python's beaver log shipper.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:modonnell/stackdash-io.git"
+  },
+  "keywords": [
+    "logging",
+    "aggregator"
+  ],
+  "author": "Matt O'Donnell",
+  "license": "apache-v2",
+  "bugs": {
+    "url": "https://github.com/modonnell/stackdash-io/issues"
+  },
+  "homepage": "https://github.com/modonnell/stackdash-io"
+}

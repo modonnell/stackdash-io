@@ -3,10 +3,21 @@
  */
 
 const redis = require('redis');
-const zmq = require('zmq');
+const client = redis.createClient();
 
-var puller = zmq.socket('pull').bind('tcp://localhost:3000');
+const queue = 'stackdash:beaver';
 
-puller.on('message', function(data) {
-  console.log('DATA' + data);
+process.on('SIGINT', function() {
+  console.log('Got SIGINT.  Press Control-D to exit.');
+  process.exit(1);
 });
+
+function readQueue () {
+  client.blpop([queue,0], function (queueName, line) {
+    // do stuff
+    console.log('log line: ' + line + "\n");
+    readQueues();
+  });
+}
+
+readQueue();
